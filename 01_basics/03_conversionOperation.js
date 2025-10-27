@@ -27,8 +27,19 @@
 // console.log(place)
 
 //from number to boolean
-let boolval = 0
-console.log(typeof boolval)
-boolval = Boolean(boolval)
-console.log(typeof boolval)
-console.log(boolval)
+// let boolval = 0
+// console.log(typeof boolval)
+// boolval = Boolean(boolval)
+// console.log(typeof boolval)
+// console.log(boolval)
+
+//************************Operation */
+
+let gamescore = 100
+console.log(gamescore)
+gamescore++
+console.log(gamescore)
+
+
+++gamescore
+console.log(gamescore)
