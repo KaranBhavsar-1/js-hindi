@@ -47,7 +47,7 @@
 
 // console.log(myName)
 // console.log(myAnotherName)
-
+// result = only changes myAnotherName Variable
 //Heap
 
 let myData = {
@@ -62,3 +62,5 @@ anotherData.id = 20
 
 console.log(myData)
 console.log(anotherData)
+
+//Result = changes the original "myData"
