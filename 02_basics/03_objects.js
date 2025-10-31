@@ -1,3 +1,5 @@
+
+
 const mySym = Symbol("key1")
 const myData = {
     name: "Karan Bhavar",
@@ -7,7 +9,7 @@ const myData = {
     loginDays: ["Monday", "Friday"],
     "full Name": "Donkey",
     [mySym]: "Is a Symbol"    
-} //an Object
+} //an Object ,,the above is an object literal
 
 // //Access the Object values
 // console.log(myData.loginDays)       //to call the object values 
