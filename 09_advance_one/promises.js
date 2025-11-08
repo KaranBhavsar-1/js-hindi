@@ -111,7 +111,7 @@
 //     const response = fetch("https://api.github.com/users/KaranBhavsar-1")
 //     return response
 // })
-fetch("https://api.github.com/users/KaranBhavyydtyklsar-1")
+fetch("https://api.github.com/users/KaranBhavsar-1")
 .then((response)=>{return response.json()})
 .then((data)=>{console.log(typeof data)
     return data})
