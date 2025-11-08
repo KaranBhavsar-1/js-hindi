@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #e7e7e7;
+      }
+      .project {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+      }
+
+      .color {
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <div class="project">
+      <div id="insert">
+        <div class="key"></div>
+        <table>
+          <tr>
+            <th>No.</th>
+            <th>Key</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- login, id, avatar_url,type,public_repos,user_view_type, followers ,following ,-->
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/KaranBhavsar-1";
+    const xhr = new XMLHttpRequest();
+    const table = document.querySelector("table");
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      const data = JSON.parse(this.responseText);
+      if (xhr.readyState === 4) {
+        addImage("User Icon", data.avatar_url);
+        addInfo("Login Id", data.login);
+        addInfo("Type", data.type);
+        addInfo("Number of Public Repositories", data.public_repos);
+        addInfo("User Type", data.user_view_type);
+        addInfo("Followers", data.followers);
+        addInfo("Followings", data.following);
+        addUrl("Visit Me ", data.html_url);
+      }
+      function addInfo(type, data) {
+        table.innerHTML += `
+        <tr>
+            <th>${type}</th>
+            <th>${data}</th>
+        </tr>`;
+        // console.log(data)
+      }
+      function addUrl(type, data) {
+        table.innerHTML += `
+        <tr>
+            <th>${type}</th>
+            <th>
+                <a href="${data}">${data}</a></th>
+        </tr>`;
+        // console.log(data)
+      }
+      function addImage(type, data) {
+        table.innerHTML += `
+        <tr>
+            <th>${type}</th>
+            <th>
+                <img src="${data}" style = "width:200px;height:200px;"
+            </th>
+        </tr>`;
+      }
+    };
+    xhr.send();
+  </script>
+</html>
